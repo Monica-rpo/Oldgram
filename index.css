@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #c6c6c6;
+  padding: 1rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 30rem; /* typical mobile width */
+  margin: 0 auto;
+  min-height: 100vh; /* ensures full height on mobile */
+}
+
+.bold-text {
+  font-weight: 900;
+  font-size: 0.9rem;
+}
+
+.small-text {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.logo,
+.user-avatar {
+  width: 8rem;
+  height: 2.5rem;
+  margin: 0 0.5rem 0 1rem;
+}
+
+.user-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.user-info {
+  min-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+.action-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 1rem 0.5rem 0 0.8rem;
+}
+
+.action-icon:hover,
+.action-icon:focus {
+  transform: scale(1.1);
+}
+.text-indent {
+  margin: 0.4rem 0 0.4rem 0.8rem;
+}
