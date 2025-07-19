@@ -31,11 +31,10 @@ const posts = [
     likeIconSrc: "images/icon-heart.png",
   },
 ];
-
-const postContainer = document.getElementById("post");
 const likedPosts = [false, false, false]; // Array to keep track of liked posts
 
 function renderPosts() {
+  const postContainer = document.getElementById("post");
   postContainer.innerHTML = ""; // Clear existing content
 
   /*Loop on posts to render it */
@@ -93,6 +92,8 @@ function renderPosts() {
 function attachLikeListeners() {
   const likeIcons = document.querySelectorAll(".like-icon");
   const likeImages = document.querySelectorAll(".post-image");
+  let lastTap = 0;
+
   // Add click event listeners to each like icon
   likeIcons.forEach((icon) => {
     icon.addEventListener("click", function () {
@@ -126,6 +127,33 @@ function attachLikeListeners() {
       renderPosts(); // Re-render posts to update likes count
     });
   });
+
+  // Add touchend event listeners for double tap detection
+  likeImages.forEach((image, index) => {
+    image("touchend", function (e) {
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTap;
+
+      if (tapLength < 300 && tapLength > 0) {
+        // It's a double tap
+        console.log("Double tap detected!");
+        //increase likes)
+        if (!likedPosts[index]) {
+          likedPosts[index] = true; // Toggle like on
+          posts[index].likes += 1; // Increment likes
+          posts[index].likeIconSrc = "images/liked-heart.png"; // Change icon to liked state
+        } else {
+          likedPosts[index] = false; // Toggle like off
+          posts[index].likes -= 1; // Decrement likes
+          posts[index].likeIconSrc = "images/icon-heart.png"; // Change icon to unliked state
+        }
+        renderPosts(); // Re-render posts to update likes count
+      }
+
+      lastTap = currentTime;
+    });
+  });
 }
 
+//Main program
 renderPosts();

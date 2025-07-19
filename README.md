@@ -15,9 +15,15 @@
 
 - ❤️ **Interactive Likes**:
 
-  - Clicking the heart icon increases the number of likes for that specific post
-  - The like counter updates immediately after clicking
+  - Clicking the heart icon or double click/touch the post's photo increases the number of likes for that specific post and another clikc is for unlick which decreases the number of likes for that specific post.
+  - The like counter updates immediately after clicking.
+  - Progressive Web App (PWA) feature
 
 - 🎨 **Static Data**:
+
   - Posts are hardcoded in a `posts` array (with name, username, avatar, image, comment, and initial likes)
-  - The content is fictio
+  - Html content is rendered from the javaScript
+
+- 📱 **Responsive Layout**:
+  - Full-width on mobile
+  - Centered and constrained to a max-width (e.g., 480px) on tablets/laptops for a clean, app-like appearance
