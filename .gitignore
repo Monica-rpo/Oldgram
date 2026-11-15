@@ -1,0 +1,13 @@
+# Installed dependencies
+node_modules/
+
+# Vite build output
+dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local logs
+*.log
