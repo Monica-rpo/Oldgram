@@ -38,7 +38,7 @@ function renderPosts() {
   postContainer.innerHTML = ""; // Clear existing content
 
   /*Loop on posts to render it */
-  for (i = 0; i < posts.length; i++) {
+  for (let i = 0; i < posts.length; i++) {
     postContainer.innerHTML += `
     <div class="user-details">
           <img
@@ -130,7 +130,7 @@ function attachLikeListeners() {
 
   // Add touchend event listeners for double tap detection
   likeImages.forEach((image, index) => {
-    image("touchend", function (e) {
+    image.addEventListener("touchend", function (e) {
       const currentTime = new Date().getTime();
       const tapLength = currentTime - lastTap;
 
